@@ -1,0 +1,33 @@
+<app-banner name=players></app-banner>
+<div class="container site-section">
+    <div class="row">
+
+
+        <div class="col-lg-6" *ngFor='let p of players'>
+            <app-player [p]='p'></app-player>
+        </div>
+
+        <div class="site-section">
+            <div class="container">
+                <h1>Add Player</h1>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <form #loginForm='ngForm' (ngSubmit)='addPlayer()'>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]='ds.player_name'
+                                    [ngModelOptions]='{standalone:true}' placeholder="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]='ds.player_poste'
+                                    [ngModelOptions]='{standalone:true}' placeholder="Player poste">
+                            </div>
+                            <button type="submit" class="btn btn-primary py-3 px-4 mr-3">Add</button>
+                        </form>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
